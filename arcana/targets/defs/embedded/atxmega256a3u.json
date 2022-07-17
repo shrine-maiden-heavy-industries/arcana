@@ -1,0 +1,57 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shrine-maiden-heavy-industries/arcana/main/contrib/schemas/aracana.target-def.schema.json",
+
+	"triple": "avr",
+	"name": "AVR atxmega256a3u",
+
+	"properties": {
+		"sizes": {
+			"char": 1,
+			"short": 2,
+			"int": 2,
+			"long": 4,
+			"longlong": 8,
+			"size_t": 2,
+			"ptrdiff_t": 2,
+			"void*": 2,
+			"float": 2,
+			"double": 8,
+			"longdouble": 8,
+			"wchar_t": 2
+		},
+		"cpu": {
+			"family": "avr",
+			"name": "avrxmega6"
+		},
+		"endian": "little"
+	},
+
+	"variables": {
+		"COMMON_FLAGS": ["-mdouble=64", "-mlong-double=64", "-mmcu=atxmega256a3u", "-ffreestanding"],
+		"COMPILER_FLAGS": ["-ffunction-sections", "-fdata-sections"],
+		"PLUGIN_DIR": "nya",
+		"AR_ARGS": ["--plugin", "${PLUGIN_DIR}${PATH_SEP}liblto_plugin.so"]
+	},
+
+	"binaries": {
+		"c": "${triple}-gcc",
+		"cxx": "${triple}-g++",
+		"ar": ["${triple}-ar", "${AR_ARGS}"],
+		"as": "${triple}-as",
+		"strip": "${triple}-strip",
+		"objcopy": "${triple}-objcopy",
+		"objdump": "${triple}-objdump",
+		"size": "${triple}-size"
+	},
+
+	"options": {
+		"c": {
+			"compile_args": ["${COMMON_FLAGS}", "${COMPILER_FLAGS}"],
+			"link_args": ["${COMMON_FLAGS}", "-nostd"]
+		},
+		"cxx": {
+			"compile_args": ["${COMMON_FLAGS}", "${COMPILER_FLAGS}", "-fno-rtii", "-fno-exceptions"],
+			"link_args": [ "${COMMON_FLAGS}", "-nostd" ]
+		}
+	}
+}

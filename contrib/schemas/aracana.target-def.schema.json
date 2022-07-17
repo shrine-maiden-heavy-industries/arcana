@@ -30,6 +30,10 @@
 						"name": {
 							"type": "string",
 							"description": "Target CPU name"
+						},
+						"uarch": {
+							"type": "string",
+							"description": "Target CPU micro-arch where applicable"
 						}
 					},
 
@@ -57,12 +61,235 @@
 
 		"binaries": {
 			"type": "object",
-			"description": "Target toolchain binaries"
+			"description": "Target toolchain binaries",
+
+			"properties": {
+				"c": {
+					"description": "Path to C compiler",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"cxx": {
+					"description": "Path to C++ compiler",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"ar": {
+					"description": "Path to static archiver",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"as": {
+					"description": "Path to assembler",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"ld": {
+					"description": "Path to linker",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"strip": {
+					"description": "Path to strip",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"objcopy": {
+					"description": "Path to objcopy",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"objdump": {
+					"description": "Path to objdump",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"size": {
+					"description": "Path to size",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"gdb": {
+					"description": "Path to GDB",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"gdbserver": {
+					"description": "Path to gdbserver",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"cmake": {
+					"description": "Path to cmake",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				}
+			}
 		},
 
 		"options": {
 			"type": "object",
-			"description": "Language options for target"
+			"description": "Language options for target",
+
+			"properties": {
+				"c": {
+					"type": "object",
+					"description": "Target C compilation and linking options",
+
+					"properties": {
+						"compile_args": {
+							"type": "array",
+							"description": "Args to pass to the C compiler",
+
+							"items": {
+								"type": "string"
+							}
+						},
+
+						"link_args": {
+							"type": "array",
+							"description": "Args to pass to the C linker",
+
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+
+				"cxx": {
+					"type": "object",
+					"description": "Target C++ compilation and linking options",
+
+					"properties": {
+						"compile_args": {
+							"type": "array",
+							"description": "Args to pass to the C++ compiler",
+
+							"items": {
+								"type": "string"
+							}
+						},
+
+						"link_args": {
+							"type": "array",
+							"description": "Args to pass to the C++ linker",
+
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
 		}
 	},
 

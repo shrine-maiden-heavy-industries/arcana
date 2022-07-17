@@ -1,0 +1,59 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shrine-maiden-heavy-industries/arcana/main/contrib/schemas/aracana.target-def.schema.json",
+
+	"triple": "arm-none-eabi",
+	"name": "Tiva-C TM4C123GH6PM",
+
+	"properties": {
+		"sizes": {
+			"char": 1,
+			"short": 2,
+			"int": 4,
+			"long": 4,
+			"longlong": 8,
+			"size_t": 4,
+			"ptrdiff_t": 4,
+			"void*": 4,
+			"float": 4,
+			"double": 8,
+			"longdouble": 8,
+			"wchar_t": 2
+		},
+		"cpu": {
+			"family": "arm",
+			"name": "cortex-m4f"
+		},
+		"endian": "little"
+	},
+
+	"variables": {
+		"COMMON_FLAGS": ["-mthumb", "-mcpu=cortex-m4", "-march=armv7e-m+fp", "-mfpu=fpv4-sp-d16", "-mfloat-abi=softfp"],
+		"COMPILER_FLAGS": ["-ffunction-sections", "-fdata-sections", "-DPART_TM4C123GH6PM", "-DARM_MATH_CM4F", "-DTARGET_IS_BLIZZARD_RA1"],
+		"LINKER_FLAGS": ["-nostartfiles", "--static", "-Wl,--gc-sections"],
+		"PLUGIN_DIR": "nya",
+		"AR_ARGS": ["--plugin", "${PLUGIN_DIR}${PATH_SEP}liblto_plugin.so"]
+	},
+
+	"binaries": {
+		"c": "${triple}-gcc",
+		"cxx": "${triple}-g++",
+		"ar": ["${triple}-ar", "${AR_ARGS}"],
+		"as": "${triple}-as",
+		"strip": "${triple}-strip",
+		"objcopy": "${triple}-objcopy",
+		"objdump": "${triple}-objdump",
+		"size": "${triple}-size",
+		"gdb": "${triple}-gdb"
+	},
+
+	"options": {
+		"c": {
+			"compile_args": ["${COMMON_FLAGS}", "${COMPILER_FLAGS}"],
+			"link_args": ["${COMMON_FLAGS}", "${LINKER_FLAGS}"]
+		},
+		"cxx": {
+			"compile_args": ["${COMMON_FLAGS}", "${COMPILER_FLAGS}", "-fno-rtii", "-fno-exceptions"],
+			"link_args": [ "${COMMON_FLAGS}", "${LINKER_FLAGS}" ]
+		}
+	}
+}

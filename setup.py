@@ -57,7 +57,13 @@ setup(
 	},
 
 	package_data     = {
+		'arcana.targets.defs.embedded': [
+			'atxmega256a3u.json',
+			'tm4c123gh6pm.json',
+		],
+		'arcana.targets.defs.generic': [
 
+		]
 	},
 
 	classifiers      = [

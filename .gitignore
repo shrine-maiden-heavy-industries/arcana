@@ -1,5 +1,4 @@
 __pycache__/
-_autosave-*
 _build/
 .coverage
 .eggs/
@@ -8,17 +7,9 @@ _build/
 .venv/
 .vscode/
 *.egg-info/
-*.FCStd[0-9]
-*.kicad_pcb-bak
-*.sch-bak
-*.slvs~
-*.tar*
-*.zip
-\#auto_saved_files\#
 build/
 dist/
-htmlcov/
-kibus.log
-pyoxidizer.bzl
-test-vcds/
-*.bkp
+*.tar.*
+*.zip
+*.whl
+*.egg

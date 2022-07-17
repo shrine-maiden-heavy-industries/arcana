@@ -1,11 +1,14 @@
 # SPDX-License-Identifier: BSD-3-Clause
-import logging    as log
-from argparse     import ArgumentParser, ArgumentDefaultsHelpFormatter
+import logging      as log
+from argparse       import ArgumentParser, ArgumentDefaultsHelpFormatter
+from pathlib        import Path
 
-from rich         import traceback
-from rich.logging import RichHandler
+from rich           import traceback
+from rich.logging   import RichHandler
 
-from ..           import config
+from ..             import actions
+from ..             import config
+from ..core.collect import collect_members, predicate_action
 
 __all__ = (
 	'cli_main',
@@ -90,6 +93,13 @@ def cli_main() -> int:
 		init_dirs()
 		setup_logging()
 
+		ACTIONS = collect_members(
+			Path(actions.__path__[0]),
+			predicate_action,
+			f'{actions.__name__}.'
+		)
+
+
 		parser = ArgumentParser(
 			formatter_class = ArgumentDefaultsHelpFormatter,
 			description     = 'Arcana build tool',
@@ -98,9 +108,27 @@ def cli_main() -> int:
 
 		common_options(parser)
 
+		action_parser = parser.add_subparsers(
+			dest = 'action',
+			required = False
+		)
+
+		if len(ACTIONS) > 0:
+			for act in ACTIONS:
+				action = act['instance']
+				p = action_parser.add_parser(
+						act['name'],
+						help = action.short_help,
+					)
+				action.register_args(p)
+
 		args = parser.parse_args()
 
 		setup_logging(args)
+
+		if args.action is not None:
+			act = list(filter(lambda a: a['name'] == args.action, ACTIONS))[0]
+			return act['instance'].run(args)
 
 	except KeyboardInterrupt:
 		log.info('Bye!')

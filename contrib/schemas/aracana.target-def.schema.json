@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "https://https://github.com/shrine-maiden-heavy-industries/arcana/blob/main/contrib/schemas/arcana.target-def.schema.json",
+	"$id": "https://raw.githubusercontent.com/shrine-maiden-heavy-industries/arcana/main/contrib/schemas/aracana.target-def.schema.json",
 	"title": "Target Definition",
 	"description": "Arcana build system target definition file",
 	"type": "object",

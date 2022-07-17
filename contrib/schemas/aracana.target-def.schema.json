@@ -1,0 +1,77 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://https://github.com/shrine-maiden-heavy-industries/arcana/blob/main/contrib/schemas/arcana.target-def.schema.json",
+	"title": "Target Definition",
+	"description": "Arcana build system target definition file",
+	"type": "object",
+	"properties": {
+		"triple": {
+			"type": "string",
+			"description": "Target triple"
+		},
+		"name": {
+			"type": "string",
+			"description": "Target name"
+		},
+		"properties": {
+			"type": "object",
+			"description": "Target properties",
+
+			"properties": {
+				"cpu": {
+					"type": "object",
+					"description": "Target CPU description",
+
+					"properties": {
+						"family": {
+							"type": "string",
+							"description": "Target CPU Family"
+						},
+						"name": {
+							"type": "string",
+							"description": "Target CPU name"
+						}
+					},
+
+					"required": [ "family", "name" ]
+				},
+				"endian": {
+					"type": "string",
+					"description": "Target endian",
+					"enum": ["little", "big", "middle"]
+				},
+
+				"sizes": {
+					"type": "object",
+					"description": "Target type sizes"
+				}
+			},
+
+			"required": [ "cpu", "endian", "sizes" ]
+		},
+
+		"variables": {
+			"type": "object",
+			"description": "Arbitrary variable definitions"
+		},
+
+		"binaries": {
+			"type": "object",
+			"description": "Target toolchain binaries"
+		},
+
+		"options": {
+			"type": "object",
+			"description": "Language options for target"
+		}
+	},
+
+	"required": [
+		"triple",
+		"name",
+		"properties",
+		"variables",
+		"binaries",
+		"options"
+	]
+}

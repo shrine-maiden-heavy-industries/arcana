@@ -8,7 +8,7 @@ _build/
 .vscode/
 *.egg-info/
 build/
-dist/
+/dist
 *.tar.*
 *.zip
 *.whl

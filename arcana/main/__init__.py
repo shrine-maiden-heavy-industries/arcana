@@ -54,6 +54,8 @@ def init_dirs() -> None:
 		config.ARCANA_CACHE,
 		config.ARCANA_DATA,
 		config.ARCANA_CONFIG,
+
+		config.ARCANA_USER_TARGETS,
 	)
 
 	for d in dirs:

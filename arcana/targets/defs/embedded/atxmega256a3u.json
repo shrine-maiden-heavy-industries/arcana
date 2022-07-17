@@ -29,7 +29,7 @@
 	"variables": {
 		"COMMON_FLAGS": ["-mdouble=64", "-mlong-double=64", "-mmcu=atxmega256a3u", "-ffreestanding"],
 		"COMPILER_FLAGS": ["-ffunction-sections", "-fdata-sections"],
-		"PLUGIN_DIR": "nya",
+		"PLUGIN_DIR": "lib/gcc/${triple}/${COMPILER_VERSION}",
 		"AR_ARGS": ["--plugin", "${PLUGIN_DIR}${PATH_SEP}liblto_plugin.so"]
 	},
 

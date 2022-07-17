@@ -30,7 +30,7 @@
 		"COMMON_FLAGS": ["-mthumb", "-mcpu=cortex-m4", "-march=armv7e-m+fp", "-mfpu=fpv4-sp-d16", "-mfloat-abi=softfp"],
 		"COMPILER_FLAGS": ["-ffunction-sections", "-fdata-sections", "-DPART_TM4C123GH6PM", "-DARM_MATH_CM4F", "-DTARGET_IS_BLIZZARD_RA1"],
 		"LINKER_FLAGS": ["-nostartfiles", "--static", "-Wl,--gc-sections"],
-		"PLUGIN_DIR": "nya",
+		"PLUGIN_DIR": "lib/gcc/${triple}/${COMPILER_VERSION}",
 		"AR_ARGS": ["--plugin", "${PLUGIN_DIR}${PATH_SEP}liblto_plugin.so"]
 	},
 

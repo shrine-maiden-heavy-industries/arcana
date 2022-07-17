@@ -52,3 +52,7 @@
 ## Language Stuff
 
  * `install_with: <TARGET|[...TARGETS]>`
+
+## Target files auto-variables
+
+* `COMPILER_VERSION` - version string for the compiler such as '11.2.0'

@@ -1,3 +1,4 @@
+# Arcana Design Notes
 
 ## Core Features
 

@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/shrine-maiden-heavy-industries/arcana/main/contrib/schemas/aracana.target-def.schema.json",
 
 	"triple": "avr",
-	"name": "AVR atxmega256a3u",
+	"name": "AVR ATXMega256A3U",
 
 	"properties": {
 		"sizes": {

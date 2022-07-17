@@ -2,6 +2,14 @@
 
 from abc import ABCMeta, abstractmethod, abstractproperty
 
+__doc__ = '''\
+Arcana actions.
+
+The following module implements the various `arcana <ACTION>`'s that are
+available.
+
+'''
+
 __all__ = (
 	'ArcanaAction',
 )

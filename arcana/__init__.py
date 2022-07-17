@@ -8,6 +8,12 @@ try:
 except ImportError:
 	__version__ = ':nya_confused:' # :nocov:
 
+__doc__ = '''\
+The Arcana Build System
+-----------------------
+
+'''
+
 __all__ = (
 
 )

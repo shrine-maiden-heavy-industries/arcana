@@ -10,6 +10,14 @@ from ..             import actions
 from ..             import config
 from ..core.collect import collect_members, predicate_action
 
+__doc__ = '''\
+
+Arcana main execution entrypoint
+
+This module implements the main CLI interface for Arcana.
+
+'''
+
 __all__ = (
 	'cli_main',
 )

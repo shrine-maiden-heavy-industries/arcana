@@ -6,6 +6,15 @@ import json
 from .embedded import TARGET_LIST as EMBEDDED_TARGETS
 from .generic  import TARGET_LIST as GENERIC_TARGETS
 
+__doc__ = '''\
+
+Arcana target definition subsystem.
+
+This module contains the bundled target definitions as well as
+the method to extract them from the python package.
+
+'''
+
 __all__ = (
 	'EMBEDDED_TARGETS',
 	'GENERIC_TARGETS',

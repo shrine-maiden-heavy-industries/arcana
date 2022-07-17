@@ -17,7 +17,7 @@
 * `arcana build [DIR (defaults to cache value)]` - Invoke backend build tool build
 * `arcana clean [DIR (defaults to cache value)]` - Invoke backend build tool clean
 * `arcana install [DIR (defaults to cache value)] [...options]` - Installed build artifacts (elevates with polkit)
-* `arcana dist [DIR (defaults to cache value)] [PKG-Target (one of rpm,deb,pkgbuild,appimage,apk,msi)]` - Create source distribution or Linux package
+* `arcana dist [DIR (defaults to cache value)] [PKG-Target (one of tar,zip,rpm,deb,pkgbuild,appimage,apk,msi)]` - Create source distribution or Linux package
 * `arcana config [DIR (defaults to cache value)] [...options]` - List and change configuration values
 * `arcana test [DIR (defaults to cache value)] [...options]` - Run registered tests
 * `arcana bench [DIR (defaults to cache value)] [...options]` - Run registered benchmarks

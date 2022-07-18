@@ -295,7 +295,7 @@
 
 	"required": [
 		"triple",
-		"name",
+		"description",
 		"properties",
 		"variables",
 		"binaries",

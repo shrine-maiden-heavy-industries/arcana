@@ -58,3 +58,9 @@
 * `PATH_SEP` - Platform path separator
 * `COMPILER_VERSION` - version string for the compiler such as '11.2.0'
 * Variable arrays automatically expand and merge
+
+## Target lookup order
+
+ 1. Built-in targets
+ 2. User targets
+ 3. Project targets

@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/shrine-maiden-heavy-industries/arcana/main/contrib/schemas/aracana.target-def.schema.json",
 
 	"triple": "arm-none-eabi",
-	"name": "Tiva-C TM4C123GH6PM",
+	"description": "Tiva-C TM4C123GH6PM",
 
 	"properties": {
 		"sizes": {

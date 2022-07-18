@@ -9,9 +9,9 @@
 			"type": "string",
 			"description": "Target triple"
 		},
-		"name": {
+		"description": {
 			"type": "string",
-			"description": "Target name"
+			"description": "Target description"
 		},
 		"properties": {
 			"type": "object",

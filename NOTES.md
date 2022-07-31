@@ -26,6 +26,8 @@
 * `arcana deps [...options]` - Add/manage dependencies (Support Meson's wrap)
 * `arcana lint [...options]` - Lint arcana build files
 * `arcana doc [...options]` - Build documentation for project if configured
+* `arcana divine [...options]` - Migrate a Meson/CMake/Autotools project to arcana
+* `arcana [new/init] [...options]` - Create a project based on a template (~/.local/share/arcana/templates/<NAME>)
 
 ## Build directory layout
 

@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://raw.githubusercontent.com/shrine-maiden-heavy-industries/arcana/main/contrib/schemas/aracana.toolchain-def.schema.json",
+	"title": "",
+	"description": "",
+	"type": "object",
+	"properties": {
+
+	},
+	"required": [
+
+	]
+}

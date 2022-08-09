@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shrine-maiden-heavy-industries/arcana/main/contrib/schemas/aracana.toolchain-def.schema.json",
+
+	"enabled": true,
+
+	"properties": {
+		"lto": true,
+		"linker_hash": "none"
+	},
+
+	"components": {
+		"binutils": {
+			"build": true
+		},
+		"gdb": {
+			"build": true
+		},
+		"libc": {
+			"build": true,
+			"libc": "avr-libc",
+			"url": "https://download.savannah.gnu.org/releases/avr-libc",
+			"filename": "avr-libc-${VERSION}.tar.bz2",
+			"common_flags": {
+				"configure": [
+					"--prefix=${PREFIX}",
+					"--enable-device-lib",
+					"--build=${MACHTYPE}"
+				]
+			},
+			"versions": [
+				{
+					"version": "2.0.0",
+					"sha512": "fc8d062043d633350dbe05978935dcb8028257a4f1013f246af9658aef0671def19ac11577d1ee9302df68df1b8cf030b22441d96852e185db212263aacabea6"
+				}
+			]
+		},
+		"gcc": {
+			"build": true
+		}
+	}
+}

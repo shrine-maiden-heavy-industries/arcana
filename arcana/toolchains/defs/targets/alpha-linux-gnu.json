@@ -1,0 +1,40 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shrine-maiden-heavy-industries/arcana/main/contrib/schemas/aracana.toolchain-def.schema.json",
+
+	"enabled": false,
+
+	"properties": {
+		"lto": false,
+		"linker_hash": "gnu"
+	},
+
+	"components": {
+		"binutils": {
+			"build": true,
+			"flags": {
+				"configure": [
+					"--enable-multilib",
+					"--enable-interwork"
+				]
+			}
+		},
+		"gdb": {
+			"build": true,
+			"flags": {
+				"configure": [
+					"--enable-multilib",
+					"--enable-interwork"
+				]
+			}
+		},
+		"gcc": {
+			"build": true,
+			"flags": {
+				"configure": [
+					"--enable-multilib",
+					"--enable-interwork"
+				]
+			}
+		}
+	}
+}

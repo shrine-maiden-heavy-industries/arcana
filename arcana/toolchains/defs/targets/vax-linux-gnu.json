@@ -1,0 +1,29 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shrine-maiden-heavy-industries/arcana/main/contrib/schemas/aracana.toolchain-def.schema.json",
+
+	"enabled": false,
+
+	"properties": {
+		"lto": false,
+		"linker_hash": "none"
+	},
+
+	"components": {
+		"binutils": {
+			"build": true
+		},
+		"gdb": {
+			"build": true
+		},
+		"linux": {
+			"build": true
+		},
+		"libc": {
+			"build": true,
+			"libc": "glibc"
+		},
+		"gcc": {
+			"build": true
+		}
+	}
+}

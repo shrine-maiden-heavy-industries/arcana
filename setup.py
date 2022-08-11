@@ -40,6 +40,7 @@ setup(
 	},
 
 	install_requires = [
+		'requests',
 		'Jinja2',
 		'arrow',
 		'rich~=12.2.0',

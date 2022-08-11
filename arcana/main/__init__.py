@@ -119,14 +119,14 @@ def cli_main() -> int:
 
 		action_parser = parser.add_subparsers(
 			dest = 'action',
-			required = False
+			required = True
 		)
 
 		if len(ACTIONS) > 0:
 			for act in ACTIONS:
 				action = act['instance']
 				p = action_parser.add_parser(
-						act['name'],
+						action.pretty_name,
 						help = action.short_help,
 					)
 				action.register_args(p)

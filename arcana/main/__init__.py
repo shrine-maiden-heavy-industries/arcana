@@ -89,7 +89,7 @@ def common_options(parser) -> None:
 	core_options = parser.add_argument_group('Core configuration options')
 
 	core_options.add_argument(
-		'--verbose',
+		'-v', '--verbose',
 		action = 'store_true',
 		help   = 'Enable verbose output during synth and pnr'
 	)
@@ -136,7 +136,7 @@ def cli_main() -> int:
 		setup_logging(args)
 
 		if args.action is not None:
-			act = list(filter(lambda a: a['name'] == args.action, ACTIONS))[0]
+			act = list(filter(lambda act: act['instance'].pretty_name == args.action, ACTIONS))[0]
 			return act['instance'].run(args)
 
 	except KeyboardInterrupt:

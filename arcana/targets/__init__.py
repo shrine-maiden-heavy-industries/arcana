@@ -39,21 +39,21 @@ class Target:
 		pass
 
 	@staticmethod
-	def from_file(target_file : Path):
+	def from_file(target_file: Path):
 		'''Get target object from target definition file'''
 
 
 		pass
 
 	@staticmethod
-	def from_definition(target_def : dict):
+	def from_definition(target_def: dict):
 		'''Get target object from given target definition dict'''
 
 		pass
 
 
 	@staticmethod
-	def from_builtin(target_name : str):
+	def from_builtin(target_name: str):
 		'''Get Target object from built-in target definition'''
 		pass
 

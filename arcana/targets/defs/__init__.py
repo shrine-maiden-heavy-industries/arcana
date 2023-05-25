@@ -28,7 +28,7 @@ ALL_TARGETS = (
 	*GENERIC_TARGETS
 )
 
-def get_builtin_target(target_name : str) -> dict:
+def get_builtin_target(target_name: str) -> dict:
 	'''Get bundled target definition
 
 	Parameters

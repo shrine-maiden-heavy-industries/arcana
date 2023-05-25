@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
-from abc import ABCMeta, abstractmethod, abstractproperty
+from abc import ABCMeta, abstractmethod
 
 __doc__ = '''\
 Arcana actions.
@@ -37,8 +37,16 @@ class ArcanaAction(metaclass = ABCMeta):
 
 	'''
 
-	pretty_name  = abstractproperty()
-	short_help   = abstractproperty()
+	@property
+	@abstractmethod
+	def pretty_name(self) -> str:
+		raise NotImplementedError()
+
+	@property
+	@abstractmethod
+	def short_help(self) -> str:
+		raise NotImplementedError()
+
 	help         = '<HELP MISSING>'
 	description  = '<DESCRIPTION MISSING>'
 

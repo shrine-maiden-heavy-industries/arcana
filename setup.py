@@ -2,17 +2,21 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 from setuptools import setup, find_packages
+from pathlib    import Path
+
+REPO_ROOT   = Path(__file__).parent
+README_FILE = (REPO_ROOT / 'README.md')
 
 def vcs_ver():
 	def scheme(version):
 		if version.tag and not version.distance:
-			return version.format_with("")
+			return version.format_with('')
 		else:
-			return version.format_choice("+{node}", "+{node}.dirty")
+			return version.format_choice('+{node}', '+{node}.dirty')
 	return {
-		"relative_to": __file__,
-		"version_scheme": "guess-next-dev",
-		"local_scheme": scheme
+		'relative_to': __file__,
+		'version_scheme': 'guess-next-dev',
+		'local_scheme': scheme
 	}
 
 setup(
@@ -21,11 +25,13 @@ setup(
 	author           = 'Aki \'lethalbit\' Van Ness',
 	author_email     = 'nya@catgirl.link',
 	description      = 'Advanced multi-platform build system',
-	long_description = 'TODO',
 	license          = 'BSD-3-Clause',
-	python_requires  = '~=3.8',
+	python_requires  = '~=3.9',
 	zip_safe         = True,
-	url              = 'https://github.com/shrine-maiden-heavy-industries/arcana',
+	url              = 'https://arcana.shmdn.link/',
+
+	long_description = README_FILE.read_text(),
+	long_description_content_type = 'text/markdown',
 
 	setup_requires   = [
 		'wheel',
@@ -43,11 +49,17 @@ setup(
 		'requests',
 		'Jinja2',
 		'arrow',
-		'rich~=12.2.0',
+		'rich>=13.0.0',
 	],
 
 	packages         = find_packages(
-		where = '.'
+		where = '.',
+		exclude = (
+			'tests',
+			'tests.*',
+			'contrib',
+			'contrib.*'
+		)
 	),
 
 	entry_points     = {
@@ -86,7 +98,6 @@ setup(
 		'Operating System :: POSIX :: SunOS/Solaris',
 
 		'Programming Language :: Python :: 3 :: Only',
-		'Programming Language :: Python :: 3.8',
 		'Programming Language :: Python :: 3.9',
 		'Programming Language :: Python :: 3.10',
 		'Programming Language :: Python :: 3.11',
@@ -96,7 +107,7 @@ setup(
 	],
 
 	project_urls     = {
-		'Documentation': 'https://github.com/shrine-maiden-heavy-industries/arcana',
+		'Documentation': 'https://arcana.shmdn.link/',
 		'Source Code'  : 'https://github.com/shrine-maiden-heavy-industries/arcana',
 		'Bug Tracker'  : 'https://github.com/shrine-maiden-heavy-industries/arcana/issues',
 	}

@@ -3,7 +3,7 @@ import os, sys
 from pathlib import Path
 sys.path.insert(0, os.path.abspath('.'))
 
-from torii import __version__ as torii_version
+from arcana import __version__ as arcana_version
 
 ROOT_DIR = (Path(__file__).parent).parent
 
@@ -23,7 +23,7 @@ def doc_version():
 
 
 project   = 'Arcana'
-version   = torii_version
+version   = arcana_version
 release   = version.split('+')[0]
 copyright = '2022, Shrine Maiden Heavy Industries'
 language  = 'en'

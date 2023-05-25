@@ -68,6 +68,8 @@ def init_dirs() -> None:
 
 		config.ARCANA_USER_TARGETS,
 		config.ARCANA_USER_EXTENSIONS,
+		config.ARCANA_USER_TEMPLATES,
+		config.ARCANA_USER_TOOLCHAINS,
 	)
 
 	for d in dirs:
